@@ -1,5 +1,7 @@
-﻿---
-layout: post
-title: "djangoproject_note_1"
+---
+layout: default
 ---
 
+# blog #
+
+blog site cannot be finded.
