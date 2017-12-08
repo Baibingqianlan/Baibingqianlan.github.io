@@ -3,8 +3,6 @@ layout: post
 title: "djangoproject note 2"
 ---
 
-# Django Learning note #
-
 ## 1. net address ##
 using django document on the site[django document](https://docs.djangoproject.com/en/dev/intro/tutorial01/), you can learn more!
 

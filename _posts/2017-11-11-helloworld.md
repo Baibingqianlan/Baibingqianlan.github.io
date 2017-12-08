@@ -1,8 +1,9 @@
 ---
 layout: post
-title: "helloworld"
 ---
 
-# helloworld #
-
 test for blog
+
+On Windows system, the context must be used as ***UTF-8 Without BOM***!
+
+
