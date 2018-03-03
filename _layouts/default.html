@@ -4,10 +4,19 @@
 <head>
   <meta charset="utf-8">
   <title>{{ page.title }}</title>
+  <link rel="stylesheet" href="{{ "/assets/css/main.css" | prepend: site.url }}">
 </head>
-
+ 
 <body>
+
+	<div class="wrapper">
+		{% include sidebar.html %}
+	</div>
+	
+	<div class="content-box">
     {{ content }}
+	</div>
+
 </body>
 
 </html>

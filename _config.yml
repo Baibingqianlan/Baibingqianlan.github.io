@@ -1,6 +1,14 @@
 encoding: utf-8
 safe: true
 
+# Author Settings
+author: Baibingqianlan # add your name
+author-img: Baibingqianlan.jpg # add your photo
+about-author: I am a C++ developer focusing on simulation development. Always hungry to keep learning. # add description
+email: 444129199@qq.com # add your Email address
+
+plugins: [jekyll-paginate, jekyll-sitemap, jekyll-feed]
+
 paginate: 5
 paginate_path: "page:num"
 
