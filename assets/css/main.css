@@ -867,6 +867,34 @@ table tfoot td {
   font-size: 14px;
 }
 
+.topbar {
+  position: relative;
+  top: 0;
+  left: 250px;
+  width: 1250px;
+  height: 50%;
+  padding: 1px 1px;
+  background-color: #ffffff;
+}
+
+.topbar img {
+  width: 80%;
+  height:50%;
+  -webkit-border-radius: 30%;
+          border-radius: 30%;
+  -webkit-transition: -webkit-transform 0.35s;
+  transition: -webkit-transform 0.35s;
+  -o-transition: transform 0.35s;
+  transition: transform 0.35s;
+  transition: transform 0.35s, -webkit-transform 0.35s;
+}
+
+.topbar img:hover {
+  -webkit-transform: scale3d(1.05, 1.05, 1);
+          transform: scale3d(1.05, 1.05, 1);
+}
+
+
 .wrapper {
   max-width: 1250px;
   position: relative;
@@ -1180,7 +1208,7 @@ a.newer-posts:hover {
 }
 */
 
-/* - - - - - - - - - - Post Page Styles - - - - - - - - - - 
+ /*- - - - - - - - - - Post Page Styles - - - - - - - - - - 
 .wrap-content {
   padding: 20px;
 }
