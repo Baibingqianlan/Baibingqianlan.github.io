@@ -871,15 +871,15 @@ table tfoot td {
   position: relative;
   top: 0;
   left: 250px;
-  width: 1250px;
+  width: 1024px;
   height: 50%;
   padding: 1px 1px;
   background-color: #ffffff;
 }
 
 .topbar img {
-  width: 80%;
-  height:50%;
+  width: 90%;
+  height:75%;
   -webkit-border-radius: 30%;
           border-radius: 30%;
   -webkit-transition: -webkit-transform 0.35s;
@@ -896,7 +896,7 @@ table tfoot td {
 
 
 .wrapper {
-  max-width: 1250px;
+  max-width: 1024px;
   position: relative;
 }
 
