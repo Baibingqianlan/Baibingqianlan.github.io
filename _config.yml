@@ -14,3 +14,4 @@ plugins: [jekyll-paginate, jekyll-sitemap, jekyll-feed]
 paginate: 5
 paginate_path: "page:num"
 
+intensedebate_comments: true
