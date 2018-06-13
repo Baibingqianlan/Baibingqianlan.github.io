@@ -48,4 +48,19 @@ layout: post
 ## 局部加权回归 （非参数学习算法）##
 对某一值，选其附近的区域，局部拟合
 
-##  ##
+## Python 机器学习 ##
+
+简单例子：
+
+需要的库：numpy, pandas, scikit-learn, matplotlib, seaborn
+
+安装Anaconda可以解决。
+
+
+
+
+参考：
+
+1. [使用 Python 开始机器学习](http://python.jobbole.com/88705/)
+2. [An example machine learning notebook](http://nbviewer.jupyter.org/github/rhiever/Data-Analysis-and-Machine-Learning-Projects/blob/master/example-data-science-notebook/Example%20Machine%20Learning%20Notebook.ipynb#Introduction)
+3. [Python数据可视化—seaborn简介和实例](https://blog.csdn.net/qq_34264472/article/details/53814653)
