@@ -1,7 +1,5 @@
 source 'https://rubygems.org'
 
-	gem "rack-jekyll"
-	gem "unicorn"
-	gem "jekyll-paginate"
-
-end
+gem "rack-jekyll"
+gem "unicorn"
+gem "jekyll-paginate"
