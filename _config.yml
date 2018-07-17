@@ -3,8 +3,7 @@ encoding: utf-8
 
 # Author Settings
 author: 百冰千岚 # add your name
-#url: http://zhwa3232.coding.me/Times.Source.Blog
-baseurl: /Times.Source.Blog
+baseurl: /baibingqianlan.github.io
 author-img: Baibingqianlan.jpg # add your photo
 top-img: top1.jpg # top-img
 top-des: 山水风景，一瓢何求
