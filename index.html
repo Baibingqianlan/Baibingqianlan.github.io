@@ -9,7 +9,7 @@ title: Time zone
 <ul>
   {% for post in paginator.posts %}
     <li>
-		<a href="{{site.baseurl}}{{ post.url }}">{{ post.title }}</a>
+		<a href="{{site.baseurl| replace:'baibingqianlan.github.io/baibingqianlan.github.io', 'baibingqianlan.github.io'}}{{ post.url }}">{{ post.title }}</a>
 		{{ post.excerpt }}
 		<p>{{ post.content | strip_html | truncatewords: 10 }}</p>
 		<p>

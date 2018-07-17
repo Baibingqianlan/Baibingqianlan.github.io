@@ -4,14 +4,15 @@
 <head>
   <meta charset="utf-8">
   <title>{{ page.title }}</title>
-  <link rel="stylesheet" href="{{ "/assets/css/main.css" | prepend: site.baseurl }}">
-  <link rel="stylesheet" href="{{ "/assets/fonts/font-awesome/css/font-awesome.min.css" | prepend: site.baseurl }}">
+  <link rel="stylesheet" href="{{ "/assets/css/main.css" | prepend: site.baseurl | replace:'baibingqianlan.github.io/baibingqianlan.github.io', 'baibingqianlan.github.io'}}">
+  <link rel="stylesheet" href="{{ "/assets/fonts/font-awesome/css/font-awesome.min.css" | prepend: site.baseurl | replace:'baibingqianlan.github.io/baibingqianlan.github.io', 'baibingqianlan.github.io'}}">
 </head>
  
 <body>
 
 	<div class="topbar">
-		<a href="{{site.baseurl}}/"><img src="{{site.baseurl}}/assets/img/{% if site.top-img %}{{site.top-img}}{% endif %}" alt="{{site.top-des}}"></a>
+		<a href="{{site.baseurl | replace:'baibingqianlan.github.io/baibingqianlan.github.io', 'baibingqianlan.github.io'}}/">
+		<img src="{{site.baseurl | replace:'baibingqianlan.github.io/baibingqianlan.github.io', 'baibingqianlan.github.io'}}/assets/img/{% if site.top-img %}{{site.top-img}}{% endif %}" alt="{{site.top-des}}"></a>
 	</div>
 	
 	<div class="wrapper">
