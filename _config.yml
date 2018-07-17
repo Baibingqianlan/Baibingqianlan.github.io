@@ -2,8 +2,12 @@ encoding: utf-8
 #safe: true
 
 # Author Settings
-author: 百冰千岚 # add your name
+
 baseurl: /baibingqianlan.github.io
+url-a: "baibingqianlan.github.io/baibingqianlan.github.io"
+url-b: "baibingqianlan.github.io"
+
+author: 百冰千岚 # add your name
 author-img: Baibingqianlan.jpg # add your photo
 top-img: top1.jpg # top-img
 top-des: 山水风景，一瓢何求

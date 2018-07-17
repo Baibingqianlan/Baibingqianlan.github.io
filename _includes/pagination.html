@@ -4,7 +4,7 @@
 		{% if paginator.total_pages > 1 %}
 		<div class="pagination">
 		  {% if paginator.previous_page %}
-			<a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' | replace:'baibingqianlan.github.io/baibingqianlan.github.io', 'baibingqianlan.github.io'}}">&laquo; Prev</a>
+			<a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' | replace: site.url-a, site.url-b}}">&laquo; Prev</a>
 		  {% else %}
 			<span>&laquo; Prev</span>
 		  {% endif %}
@@ -13,14 +13,14 @@
 			{% if page == paginator.page %}
 			  <em>{{ page }}</em>
 			{% elsif page == 1 %}
-			  <a href="{{ '/index.html' | prepend: site.baseurl | replace: '//', '/' | replace:'baibingqianlan.github.io/baibingqianlan.github.io', 'baibingqianlan.github.io'}}">{{ page }}</a>
+			  <a href="{{ '/index.html' | prepend: site.baseurl | replace: '//', '/' | replace: site.url-a, site.url-b}}">{{ page }}</a>
 			{% else %}
-			  <a href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page | replace:'baibingqianlan.github.io/baibingqianlan.github.io', 'baibingqianlan.github.io'}}">{{ page }}</a>
+			  <a href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page | replace: site.url-a, site.url-b}}">{{ page }}</a>
 			{% endif %}
 		  {% endfor %}
 
 		  {% if paginator.next_page %}
-			<a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' | replace:'baibingqianlan.github.io/baibingqianlan.github.io', 'baibingqianlan.github.io'}}">Next &raquo;</a>
+			<a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' | replace: site.url-a, site.url-b}}">Next &raquo;</a>
 		  {% else %}
 			<span>Next &raquo;</span>
 		  {% endif %}

@@ -3,8 +3,8 @@
   <header>
 	<div class="about">
 	  <div class="cover-author-image">
-		<a href="{{site.baseurl | replace:'baibingqianlan.github.io/baibingqianlan.github.io', 'baibingqianlan.github.io'}}/">
-		<img src="{{site.baseurl | replace:'baibingqianlan.github.io/baibingqianlan.github.io', 'baibingqianlan.github.io'}}/assets/img/{% if site.author-img %}{{site.author-img}}{% endif %}" alt="{{site.author}}"></a>
+		<a href="{{site.baseurl | replace: site.url-a, site.url-b}}/">
+		<img src="{{site.baseurl | replace: site.url-a, site.url-b}}/assets/img/{% if site.author-img %}{{site.author-img}}{% endif %}" alt="{{site.author}}"></a>
 	  </div>
 	  <div class="author-name">{{site.author}}</div>
 	  <p>{{site.about-author}}</p>
