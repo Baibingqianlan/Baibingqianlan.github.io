@@ -219,7 +219,7 @@ History 对象属性
 Location 对象包含有关当前 URL 的信息。
 Location 对象是 window 对象的一部分，可通过 window.Location 属性对其进行访问。
 
-![host url]({{site.url}}/assets/2018-07-05/host.png)
+![host url]({{site.baseurl}}/assets/2018-07-05/host.png)
 
 Location 对象属性
 

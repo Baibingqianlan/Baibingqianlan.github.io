@@ -8,7 +8,7 @@ layout: post
 + 支持的C++特性比较全。
 + QGIS使用了SIP进行接口封装，如下图：
 
-![QGIS接口]({{site.url}}/assets/2018-03-21/qgis-python.png)
+![QGIS接口]({{site.baseurl}}/assets/2018-03-21/qgis-python.png)
 
 + 绑定实例应该提供了实现接口。
 
