@@ -3,7 +3,6 @@ encoding: utf-8
 
 
 # Author Settings
-baseurl: /baibingqianlan.github.io
 destination: ./baibingqianlan.github.io
 author: 百冰千岚 # add your name
 author-img: Baibingqianlan.jpg # add your photo
