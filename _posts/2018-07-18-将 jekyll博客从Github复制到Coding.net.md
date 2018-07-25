@@ -25,3 +25,5 @@ github是在host的后面直接接你的博客，coding则是又加了一级，�
 参考：
 
 1. [git 远程存在文件本地不想提交](https://blog.csdn.net/need_you_i_dream/article/details/80163435)
+2. [我的github](https://baibingqianlan.github.io/)
+3. [我的coding](http://zhwa3232.coding.me/baibingqianlan.github.io/)

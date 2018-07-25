@@ -177,6 +177,5 @@ The following table shows which C++ classes are supported and the equivalent SWI
 1. [What is SIP?](https://pypi.python.org/pypi/SIP)
 2. [ python/c++接口库比较（SWIG，boost.python, pycxx, py++, sip, Weave, Pyrex ）]( https://blog.csdn.net/LaineGates/article/details/19565823)
 3. [SIP官网](https://www.riverbankcomputing.com/software/sip/intro)
-
-
-
+4. [用Boost.Python将C++代码封装为Python模块](https://www.cnblogs.com/xuyuan77/p/8419482.html)
+5. [用c++和python写GUI程序（python嵌入方式）](https://www.cnblogs.com/Shiren-Y/archive/2011/04/05/2005832.html)
