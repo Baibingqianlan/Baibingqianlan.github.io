@@ -64,3 +64,4 @@ layout: post
 1. [使用 Python 开始机器学习](http://python.jobbole.com/88705/)
 2. [An example machine learning notebook](http://nbviewer.jupyter.org/github/rhiever/Data-Analysis-and-Machine-Learning-Projects/blob/master/example-data-science-notebook/Example%20Machine%20Learning%20Notebook.ipynb#Introduction)
 3. [Python数据可视化—seaborn简介和实例](https://blog.csdn.net/qq_34264472/article/details/53814653)
+4. [只需十四步：从零开始掌握 Python 机器学习（附资源）](https://www.cnblogs.com/aabbcc/p/8683042.html)
