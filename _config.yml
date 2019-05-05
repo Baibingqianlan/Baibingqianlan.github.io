@@ -10,6 +10,7 @@ author-img: Baibingqianlan.jpg # add your photo
 top-img: top1.jpg # top-img
 top-des: 山水风景，一瓢何求
 about-author: I am a C++/Python developer focusing on simulation development. Always hungry to keep learning. # add description
+github: baibingqianlan.github.io/
 email: 444129199@qq.com # add your Email address
 
 plugins: [jekyll-paginate, jekyll-sitemap, jekyll-feed]
