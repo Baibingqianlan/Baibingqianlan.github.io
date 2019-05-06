@@ -56,31 +56,30 @@ Django定义了一个标准的API，用于加载和渲染模板，而不用考�
 
 标签,可以用来输出内容，用作控制作用，如if和for循环。标签用 ``\{ % 和 \}`` 包围。
 
-{% raw %}
 
 	1.CSRF 保护
-	{% csrf_token %}  
+	_{ _% csrf_token  _%_}  
 	
 	2.if,for循环，cycle
-	{% if user.is_authenticated %}Hello, {{ user.username }}.{% endif %}
+	_{ _% if user.is_authenticated  _%_}Hello, {{ user.username }}._{ _% endif  _%_}
 
-	{% for o in some_list %}
-    	<tr class="{% cycle 'row1' 'row2' }">
+	_{ _% for o in some_list  _%_}
+    	<tr class="_{ _% cycle 'row1' 'row2' }">
         ...
     	</tr>
-	{% endfor %}
+	_{ _% endfor  _%_}
 
 	cycle,用来生成参数，第一次产生第一个参数，第二次产生第二个，结束后从头再来，常用在for循环中。
 
 	3.自动转义
-	{% autoescape on %}
+	_{ _% autoescape on  _%_}
 	    {{ body }}
-	{% endautoescape %}
+	_{ _% endautoescape  _%_}
 
 	4.extends扩展模板
-	{% extends "base.html" %} 用引号引用，将 "base.html" 当作父模板扩展.
+	_{ _% extends "base.html"  _%_} 用引号引用，将 "base.html" 当作父模板扩展.
 
-	{% extends variable %} 使用变量值. 如果变量值为字符串,
+	_{ _% extends variable  _%_} 使用变量值. 如果变量值为字符串,
 	则当作父模板扩展. 如果是一个模板对象,则也会当作父模板扩展.
 
 	目录：
@@ -92,19 +91,19 @@ Django定义了一个标准的API，用于加载和渲染模板，而不用考�
 	base1.html
 	
 	在template.html,可以使用以下扩展：
-	{% extends "./base2.html" %}
-	{% extends "../base1.html" %}
-	{% extends "./my/base3.html" %}
+	_{ _% extends "./base2.html"  _%_}
+	_{ _% extends "../base1.html"  _%_}
+	_{ _% extends "./my/base3.html"  _%_}
 
 	5.乘法、除法widthratio
-	{% widthratio 5 1 100 %}
+	_{ _% widthratio 5 1 100  _%_}
 	note:等同于：(5 / 1) * 100 ，结果返回500，withratio需要三个参数，
 	它会使用参数1/参数2*参数3的方式进行运算，进行乘法运算，使「参数2」=1
 
 	6.with,定义变量
-	{% with total=business.employees.count %}
+	_{ _% with total=business.employees.count  _%_}
     {{ total }} employee{{ total|pluralize }}
-	{% endwith %}
+	_{ _% endwith  _%_}
 
 **过滤器:**
 
@@ -120,9 +119,9 @@ Django定义了一个标准的API，用于加载和渲染模板，而不用考�
 	注：字符器会转成整数进行操作
 
 	利用 add 这个filter ,可以做更疯狂的事:
-	计算 A^2: {% widthratio A 1 A %}
-	计算 (A+B)^2: {% widthratio A|add:B 1 A|add:B %}
-	计算 (A+B) * (C+D): {% widthratio A|add:B 1 C|add:D %}
+	计算 A^2: _{ _% widthratio A 1 A  _%_}
+	计算 (A+B)^2: _{ _% widthratio A|add:B 1 A|add:B  _%_}
+	计算 (A+B) * (C+D): _{ _% widthratio A|add:B 1 C|add:D  _%_}
 
 	2.addslashes，引号前增加转义，用CSV文件中用处多
 
@@ -180,9 +179,9 @@ Django定义了一个标准的API，用于加载和渲染模板，而不用考�
 	34.26000	{{ value|floatformat:"-3" }}	34.260
 
 	12.force_escape,强制转义
-	{% autoescape off %}
+	_{ _% autoescape off  _%_}
     {{ body|linebreaks|force_escape }}
-	{% endautoescape %}
+	_{ _% endautoescape  _%_}
 
 	13.get_digit，取数值的第几位，从右侧开始，第一个为1
 	{{ value|get_digit:"2" }}
@@ -215,31 +214,31 @@ Django定义了一个标准的API，用于加载和渲染模板，而不用考�
 	22.i18n，国际化；l10n，本地化
 
 	23.static,加载静态文件
-	{% load static %}
-	<img src="{% static "images/hi.jpg" %}" alt="Hi!" />
+	_{ _% load static  _%_}
+	<img src="_{ _% static "images/hi.jpg"  _%_}" alt="Hi!" />
 
-	{% load static %}
-	{% static "images/hi.jpg" as myphoto %}
+	_{ _% load static  _%_}
+	_{ _% static "images/hi.jpg" as myphoto  _%_}
 	<img src="{{ myphoto }}"></img>
 
 	24.get_static_prefix，取静态路径
-	{% load static %}
-	<img src="{% get_static_prefix %}images/hi.jpg" alt="Hi!" />
+	_{ _% load static  _%_}
+	<img src="_{ _% get_static_prefix  _%_}images/hi.jpg" alt="Hi!" />
 
-	{% load static %}
-	{% get_static_prefix as STATIC_PREFIX %}
+	_{ _% load static  _%_}
+	_{ _% get_static_prefix as STATIC_PREFIX  _%_}
 	<img src="{{ STATIC_PREFIX }}images/hi.jpg" alt="Hi!" />
 	<img src="{{ STATIC_PREFIX }}images/hi2.jpg" alt="Hello!" />
 
 	25.get_media_prefix，
-	{% load static %}
-	<body data-media-url="{% get_media_prefix %}">
+	_{ _% load static  _%_}
+	<body data-media-url="_{ _% get_media_prefix  _%_}">
 
 	26.include，包含其它模板
-	{% include "foo/bar.html" %}
+	_{ _% include "foo/bar.html"  _%_}
 
 	27.now，当前日期或时间
-	It is {% now "jS F Y H:i" %}
+	It is _{ _% now "jS F Y H:i"  _%_}
 
 自定义方法：
 
@@ -256,7 +255,7 @@ Django定义了一个标准的API，用于加载和渲染模板，而不用考�
 	    return round((value / div), 2)
 然后在模板中可以按照如下使用，当然前提是
 
-	{% load templatehelper %}：
+	_{ _% load templatehelper  _%_}：
 	<td>{{ foo.product_amount |div:100 }}</td>
 
 **注释(Comments)：**
@@ -265,7 +264,6 @@ Django定义了一个标准的API，用于加载和渲染模板，而不用考�
 
 	{# this won't be rendered #}
 
-{% endraw %}
 
 参考：
 
