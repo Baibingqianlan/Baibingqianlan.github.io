@@ -416,11 +416,11 @@ ListView 有以下方法：
 
 	<h1>文章列表</h1>
 	<ul>
-	{% for article in object_list %}
+	_{_% for article in object_list _%_}
 	    <li>{{ article.pub_date|date }} - {{ article.headline }}</li>
-	{% empty %}
+	_{_% empty _%_}
 	    <li>抱歉，目前还没有文章。</li>
-	{% endfor %}
+	_{_% endfor _%_}
 	</ul>
 
 **心得**：
