@@ -346,11 +346,11 @@ DetailView 有以下方法：
 	
 页面	article_detail.html
 	
-	<h1>标题：{{ object.title }}</h1>
-	<p>内容：{{ object.content }}</p>
-	<p>发表人: {{ object.reporter }}</p>
-	<p>发表于: {{ object.pub_date|date }}</p>
-	<p>日期: {{ now|date }}</p>
+	<h1>标题：_{_{ object.title _}_}</h1>
+	<p>内容：_{_{ object.content _}_}</p>
+	<p>发表人: _{_{ object.reporter _}_}</p>
+	<p>发表于: _{_{ object.pub_date|date _}_}</p>
+	<p>日期: _{_{ now|date _}_}</p>
 
 实例2：
 
@@ -445,7 +445,7 @@ safe标签
 
 我们在发布的文章用markdown之后，是一堆乱码一样的 HTML 标签，这些标签本应该在浏览器显示它本身的格式，但是 Django 出于安全方面的考虑，任何的 HTML 代码在 Django 的模板中都会被转义（即显示原始的 HTML 代码，而不是经浏览器渲染后的格式）。为了解除转义，只需在模板标签使用 safe 过滤器即可，告诉 Django，这段文本是安全的，你什么也不用做。
 
-在模板中找到展示博客文章主体的 {{ post.body }} 部分，为其加上 safe 过滤器，{{ post.body|safe }}，这下看到预期效果了。
+在模板中找到展示博客文章主体的 _{_{ post.body _}_} 部分，为其加上 safe 过滤器，_{_{ post.body|safe _}_}，这下看到预期效果了。
 
 	class DetailView(generic.DetailView):
 	    model = BlogPost
