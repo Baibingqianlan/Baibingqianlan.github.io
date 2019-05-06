@@ -42,15 +42,15 @@ Django定义了一个标准的API，用于加载和渲染模板，而不用考�
 
 **变量：**
 
-变量用 `{{ `和 `}}` 包围，用来输出内容信息，变量可以用模型信息，可以和模型进行交换信息。
+变量用 `_{_{ `和 `_}_}` 包围，用来输出内容信息，变量可以用模型信息，可以和模型进行交换信息。
 >
-	My first name is {{ first_name }}. My last name is {{ last_name }}.
+	My first name is _{_{ first_name _}_}. My last name is _{_{ last_name _}_}.
 
 其中first_name与last_name可以在模型中定义。模型的值、属性、列表等查看可以用点来访问，如下：
 >
-	{{ my_dict.key }}
-	{{ my_object.attribute }}
-	{{ my_list.0 }}
+	_{_{ my_dict.key _}_}
+	_{_{ my_object.attribute _}_}
+	_{_{ my_list.0 _}_}
 
 **标签：**
 
@@ -61,7 +61,7 @@ Django定义了一个标准的API，用于加载和渲染模板，而不用考�
 	_{ _% csrf_token  _%_}  
 	
 	2.if,for循环，cycle
-	_{ _% if user.is_authenticated  _%_}Hello, {{ user.username }}._{ _% endif  _%_}
+	_{ _% if user.is_authenticated  _%_}Hello, _{_{ user.username _}_}._{ _% endif  _%_}
 
 	_{ _% for o in some_list  _%_}
     	<tr class="_{ _% cycle 'row1' 'row2' }">
@@ -73,7 +73,7 @@ Django定义了一个标准的API，用于加载和渲染模板，而不用考�
 
 	3.自动转义
 	_{ _% autoescape on  _%_}
-	    {{ body }}
+	    _{_{ body _}_}
 	_{ _% endautoescape  _%_}
 
 	4.extends扩展模板
@@ -102,19 +102,19 @@ Django定义了一个标准的API，用于加载和渲染模板，而不用考�
 
 	6.with,定义变量
 	_{ _% with total=business.employees.count  _%_}
-    {{ total }} employee{{ total|pluralize }}
+    _{_{ total _}_} employee_{_{ total|pluralize _}_}
 	_{ _% endwith  _%_}
 
 **过滤器:**
 
 过滤器，用来操作变量的值与格式。
 
-	{{ var|title }}
-	{{ my_date|date:"Y-m-d" }}
+	_{_{ var|title _}_}
+	_{_{ my_date|date:"Y-m-d" _}_}
 
 	1.add，增加
-	{{ value|add:"2" }}
-	{{ first|add:second }}
+	_{_{ value|add:"2" _}_}
+	_{_{ first|add:second _}_}
 	first =[1, 2, 3] and second = [4, 5, 6], 结果＝ [1, 2, 3, 4, 5, 6].
 	注：字符器会转成整数进行操作
 
@@ -125,82 +125,82 @@ Django定义了一个标准的API，用于加载和渲染模板，而不用考�
 
 	2.addslashes，引号前增加转义，用CSV文件中用处多
 
-	{{ value|addslashes }}
+	_{_{ value|addslashes _}_}
 	If value is "I'm using Django", the output will be "I\'m using Django".
 
 	3.capfirst，首字母大写；lower，转为小写；
 
 	4.center，给定宽度居中；ljust，左对齐；rjust，右对齐
-	"{{ value|center:"15" }}"
+	"_{_{ value|center:"15" _}_}"
 
 	5.cut，移除给定值
-	{{ value|cut:" " }}
+	_{_{ value|cut:" " _}_}
 	If value is "String with spaces", the output will be "Stringwithspaces".
 
 	6.date日期格式化，类似PHP的data()函数
-	{{ value|date:"D d M Y" }} #'Wed 09 Jan 2008'.
-	{{ value|date:"SHORT_DATE_FORMAT" }} #"09/01/2008"
-	{{ value|date }} #9 de Enero de 2008
-	{{ value|date:"D d M Y" }} {{ value|time:"H:i" }} 
+	_{_{ value|date:"D d M Y" _}_} #'Wed 09 Jan 2008'.
+	_{_{ value|date:"SHORT_DATE_FORMAT" _}_} #"09/01/2008"
+	_{_{ value|date _}_} #9 de Enero de 2008
+	_{_{ value|date:"D d M Y" _}_} _{_{ value|time:"H:i" _}_} 
 
 	7.default，默认值 ，default_if_none，如果值为None
-	{{ value|default:"nothing" }}
-	{{ value|default_if_none:"nothing" }}
+	_{_{ value|default:"nothing" _}_}
+	_{_{ value|default_if_none:"nothing" _}_}
 
 	8.dictsort,字典排序；dictsortreversed，反向排序，
-	{{ value|dictsort:"name" }} #按name排序
+	_{_{ value|dictsort:"name" _}_} #按name排序
 
 	9.divisibleby，被整除
-	{{ value|divisibleby:"3" }}
+	_{_{ value|divisibleby:"3" _}_}
 	If value is 21, the output would be True.
 
 	10.filesizeformat，文件大小格式化可读， (i.e. '13 KB', '4.1 MB', '102 bytes', etc.).
-	{{ value|filesizeformat }}
+	_{_{ value|filesizeformat _}_}
 	If value is 123456789, the output would be 117.7 MB.
 
 	11.first，列表第一项；last,最后一项
-	{{ value|first }}
+	_{_{ value|first _}_}
 	If value is the list ['a', 'b', 'c'], the output will be 'a'.
 	
 	12.floatformat，浮点格式化
-	34.23234	{{ value|floatformat }}	34.2
-	34.00000	{{ value|floatformat }}	34
-	34.26000	{{ value|floatformat }}	34.3
+	34.23234	_{_{ value|floatformat _}_}	34.2
+	34.00000	_{_{ value|floatformat _}_}	34
+	34.26000	_{_{ value|floatformat _}_}	34.3
 	
 	
 	value		Template					Output
-	34.23234	{{ value|floatformat:3 }}	34.232
-	34.00000	{{ value|floatformat:3 }}	34.000
-	34.26000	{{ value|floatformat:3 }}	34.260
+	34.23234	_{_{ value|floatformat:3 _}_}	34.232
+	34.00000	_{_{ value|floatformat:3 _}_}	34.000
+	34.26000	_{_{ value|floatformat:3 _}_}	34.260
 
 	自动圆整
-	34.23234	{{ value|floatformat:"-3" }}	34.232
-	34.00000	{{ value|floatformat:"-3" }}	34
-	34.26000	{{ value|floatformat:"-3" }}	34.260
+	34.23234	_{_{ value|floatformat:"-3" _}_}	34.232
+	34.00000	_{_{ value|floatformat:"-3" _}_}	34
+	34.26000	_{_{ value|floatformat:"-3" _}_}	34.260
 
 	12.force_escape,强制转义
 	_{ _% autoescape off  _%_}
-    {{ body|linebreaks|force_escape }}
+    _{_{ body|linebreaks|force_escape _}_}
 	_{ _% endautoescape  _%_}
 
 	13.get_digit，取数值的第几位，从右侧开始，第一个为1
-	{{ value|get_digit:"2" }}
+	_{_{ value|get_digit:"2" _}_}
 	If value is 123456789, the output will be 8.
 	
 	14.join，列表连接成为字符串
-	{{ value|join:" // " }}
+	_{_{ value|join:" // " _}_}
 	If value is the list ['a', 'b', 'c'], the output will be the string "a // b // c".
 	
 	15.length，长度；length_is，长度是否为
-	{{ value|length }}
-	{{ value|length_is:"4" }}
+	_{_{ value|length _}_}
+	_{_{ value|length_is:"4" _}_}
 
 	16.linebreaks，将换行（\n）替换为<br />
-	{{ value|linebreaks }}
+	_{_{ value|linebreaks _}_}
 	If value is Joel\nis a slug, the output will be <p>Joel<br />is a slug</p>.
 
 	17.linenumbers，增加行号
-	{{ value|linenumbers }}
+	_{_{ value|linenumbers _}_}
 
 	18.make_list，生成列表
 
@@ -209,7 +209,7 @@ Django定义了一个标准的API，用于加载和渲染模板，而不用考�
 	20.random，列表中随机取值
 
 	21.pluralize，自动复数
-	You have {{ num_walruses }} walrus{{ num_walruses|pluralize:"es" }}.
+	You have _{_{ num_walruses _}_} walrus_{_{ num_walruses|pluralize:"es" _}_}.
 
 	22.i18n，国际化；l10n，本地化
 
@@ -219,7 +219,7 @@ Django定义了一个标准的API，用于加载和渲染模板，而不用考�
 
 	_{ _% load static  _%_}
 	_{ _% static "images/hi.jpg" as myphoto  _%_}
-	<img src="{{ myphoto }}"></img>
+	<img src="_{_{ myphoto _}_}"></img>
 
 	24.get_static_prefix，取静态路径
 	_{ _% load static  _%_}
@@ -227,8 +227,8 @@ Django定义了一个标准的API，用于加载和渲染模板，而不用考�
 
 	_{ _% load static  _%_}
 	_{ _% get_static_prefix as STATIC_PREFIX  _%_}
-	<img src="{{ STATIC_PREFIX }}images/hi.jpg" alt="Hi!" />
-	<img src="{{ STATIC_PREFIX }}images/hi2.jpg" alt="Hello!" />
+	<img src="_{_{ STATIC_PREFIX _}_}images/hi.jpg" alt="Hi!" />
+	<img src="_{_{ STATIC_PREFIX _}_}images/hi2.jpg" alt="Hello!" />
 
 	25.get_media_prefix，
 	_{ _% load static  _%_}
@@ -256,13 +256,13 @@ Django定义了一个标准的API，用于加载和渲染模板，而不用考�
 然后在模板中可以按照如下使用，当然前提是
 
 	_{ _% load templatehelper  _%_}：
-	<td>{{ foo.product_amount |div:100 }}</td>
+	<td>_{_{ foo.product_amount |div:100 _}_}</td>
 
 **注释(Comments)：**
 
 注释(Comments)，用 `{#` 和 `#}` 包围
 
-	{# this won't be rendered #}
+	_{# this won't be rendered #_}
 
 
 参考：
