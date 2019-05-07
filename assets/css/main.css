@@ -1021,9 +1021,9 @@ table tfoot td {
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-  -webkit-flex-direction: row;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-flex-wrap: wrap;
       -ms-flex-wrap: wrap;
           flex-wrap: wrap;
@@ -1114,8 +1114,7 @@ footer .copyright {
 
 
 .post {
-  width: 720px;
-  max-width: 100%;
+  width: 700px;
   margin-bottom: 1.5rem;
   display: -webkit-box;
   display: -webkit-flex;
