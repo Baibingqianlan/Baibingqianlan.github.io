@@ -1208,7 +1208,7 @@ a.newer-posts:hover {
 }
 
 
- /*- - - - - - - - - - Post Page Styles - - - - - - - - - - 
+ /*- - - - - - - - - - Post Page Styles - - - - - - - - - - */
 .wrap-content {
   padding: 20px;
 }
@@ -1302,7 +1302,7 @@ a.newer-posts:hover {
 .page-footer .page-tag a:hover {
   text-decoration: underline;
 }
-*/
+
 
 /* - - - - - - - - - - Tag Styles - - - - - - - - - - */
 .blog-tags {
