@@ -1014,6 +1014,7 @@ table tfoot td {
 
 .content-box {
   padding: 20px;
+  width: 1024px;
   padding-left: 260px;
   display: -webkit-box;
   display: -webkit-flex;
@@ -1114,7 +1115,7 @@ footer .copyright {
 
 
 .post {
-  width: 700px;
+  width: 90%;
   margin-bottom: 1.5rem;
   display: -webkit-box;
   display: -webkit-flex;
