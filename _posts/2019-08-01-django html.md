@@ -41,14 +41,40 @@ for 属性规定 label 与哪个表单元素绑定。
 	redirect( '/timeblog/') //http://127.0.0.1:8000/timeblog/
 	redirect( 'timeblog/') //http://127.0.0.1:8000/timeblog/timeblog
 
+### 3. django render() render_to_response() local()
 
+#### django render()
+context在Django里表现为 Context 类，在 django.template 模块里。 它的构造函数带有一个可选的参数：
 
+一个字典映射变量和它们的值。 调用 Template 对象 的 render() 方法并传递context来填充模板：
 
+	>>> from django.template import Context, Template  
+	>>> t = Template('My name is {{ name }}.')  
+	>>> c = Context({'name': 'Stephane'})  
+	>>> t.render(c)  
+	u'My name is Stephane.'
 
+在views.py中:
+	
+	return render(request, 'blog_add.html', 
+		{'blog': blog, 'form': form, 'id': id, 'tag': tag})
 
+#### django中的`render_to_response`()
+	
+	 return render_to_response('blog_add.html', 
+		{'blog': blog, 'form': form, 'id': id, 'tag': tag})
+
+很明显，如果使用render_to_response就省去了render里传递的request。
+
+#### local()
+
+locals()可以直接将函数中所有的变量全部传给模板。当然这可能会传递一些多余的参数，有点浪费内存的嫌疑。
+
+	return render(request, 'timeblog/register.html', locals())
 
 
 参考：
 
 1. [my coding.net](http://zhwa3232.coding.me/baibingqianlan.github.io/)
+2. [django 中的render和render_to_response()和locals()](https://blog.csdn.net/uwenhao2008/article/details/80675370)
 
